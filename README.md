@@ -20,4 +20,4 @@ Once the project is opened in Godot, click the Play button to run the game.
 
 - Combat system for defeating enemies
 - Collectible potions and coins
-- The final level includes a boss fight.
+- The final level includes a boss fight
