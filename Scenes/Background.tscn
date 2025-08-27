@@ -1,0 +1,543 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Art/STAR.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Background.gd" type="Script" id=2]
+[ext_resource path="res://Art/BRICKBLACK.jpg" type="Texture" id=3]
+[ext_resource path="res://Art/wall1.png" type="Texture" id=4]
+[ext_resource path="res://Art/sprites/characters/player.png" type="Texture" id=5]
+[ext_resource path="res://Art/NightBorne/NightBorne.png" type="Texture" id=6]
+[ext_resource path="res://Art/sprites/characters/slime.png" type="Texture" id=7]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 192, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 48, 192, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 192, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 5 )
+region = Rect2( 144, 192, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 5 )
+region = Rect2( 192, 192, 48, 48 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 5 )
+region = Rect2( 240, 192, 48, 48 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "playerRight",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 80, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 6 )
+region = Rect2( 80, 80, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 6 )
+region = Rect2( 160, 80, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 6 )
+region = Rect2( 240, 80, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 6 )
+region = Rect2( 320, 80, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 6 )
+region = Rect2( 400, 80, 80, 80 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 7 )
+region = Rect2( 96, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 7 )
+region = Rect2( 128, 32, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 7 )
+region = Rect2( 160, 32, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="Background" type="ParallaxBackground"]
+script = ExtResource( 2 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="NightSky" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 331.989, 313.06 )
+scale = Vector2( 1.68692, 1.71101 )
+texture = ExtResource( 1 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 1.2, 1 )
+motion_mirroring = Vector2( 640, 0 )
+
+[node name="Control" type="Control" parent="ParallaxLayer2"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Brickblack26" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 276.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack27" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 276.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack29" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 308.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack30" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 308.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack31" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 341.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 17.1534, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack2" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 17.1534, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack3" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 17.1534, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack4" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 49.1534, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack5" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 49.1534, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack6" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 49.1534, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack7" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 82.1534, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack8" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 82.1534, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack9" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 82.1534, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack10" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 114.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack11" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 114.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack12" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 114.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack13" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 147.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack14" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 147.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack15" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 147.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack16" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 179.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack17" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 179.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack18" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 179.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack19" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 212.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack20" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 212.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack21" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 212.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack22" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 244.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack23" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 244.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack24" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 244.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack25" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 276.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack28" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 308.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack32" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 341.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack33" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 341.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack34" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 373.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack35" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 373.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack36" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 373.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack37" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 406.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack38" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 406.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack39" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 406.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack40" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 438.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack41" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 438.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack42" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 438.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack43" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 471.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack44" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 471.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack45" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 471.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack46" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 503.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack47" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 503.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack48" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 503.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack49" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 532.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack50" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 532.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack51" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 532.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack52" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 564.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack53" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 564.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack54" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 564.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack55" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 597.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack56" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 597.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack57" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 597.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack58" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 629.153, 304.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack59" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 629.153, 370.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Brickblack60" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 629.153, 337.25 )
+scale = Vector2( 0.238959, 0.253788 )
+texture = ExtResource( 3 )
+
+[node name="Wall1" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 18, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall2" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 50, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall3" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 82, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall4" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 114, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall5" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 146, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall6" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 178, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall7" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 210, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall8" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 242, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall9" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 274, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall10" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 306, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall11" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 338, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall12" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 370, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall13" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 402, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall14" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 434, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall15" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 466, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall16" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 498, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall17" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 530, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall18" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 562, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall19" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 594, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="Wall20" type="Sprite" parent="ParallaxLayer2/Control"]
+position = Vector2( 626, 278.25 )
+scale = Vector2( 0.3375, 0.507813 )
+texture = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 562, 232 )
+scale = Vector2( 1.77083, 1.77083 )
+frames = SubResource( 2 )
+animation = "playerRight"
+frame = 5
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 93, 190 )
+scale = Vector2( 2.99375, 2.99375 )
+frames = SubResource( 15 )
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( 491, 251 )
+scale = Vector2( 1.625, 1.625 )
+frames = SubResource( 22 )
+frame = 5

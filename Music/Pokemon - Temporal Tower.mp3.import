@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Pokemon - Temporal Tower.mp3-d5b0a991728e2539b6d3de7d7a423029.mp3str"
+
+[deps]
+
+source_file="res://Music/Pokemon - Temporal Tower.mp3"
+dest_files=[ "res://.import/Pokemon - Temporal Tower.mp3-d5b0a991728e2539b6d3de7d7a423029.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

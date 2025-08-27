@@ -1,0 +1,976 @@
+[gd_scene load_steps=51 format=2]
+
+[ext_resource path="res://Art/NightBorne/WALL.webp" type="Texture" id=1]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
+[ext_resource path="res://Art/boss head.png" type="Texture" id=3]
+[ext_resource path="res://Art/lightning.png" type="Texture" id=4]
+[ext_resource path="res://Art/NightBorne/Floor.jpg" type="Texture" id=5]
+[ext_resource path="res://Art/speed.webp" type="Texture" id=6]
+[ext_resource path="res://Art/01coin.png" type="Texture" id=7]
+[ext_resource path="res://Art/NightBorne/Stone.jpg" type="Texture" id=8]
+[ext_resource path="res://Art/ladder.jpg" type="Texture" id=9]
+[ext_resource path="res://Art/Healing.png" type="Texture" id=10]
+[ext_resource path="res://Art/door.png" type="Texture" id=11]
+[ext_resource path="res://Art/playerhead.png" type="Texture" id=12]
+[ext_resource path="res://Music/Pokemon - Temporal Tower.mp3" type="AudioStream" id=13]
+[ext_resource path="res://Art/StrengthSymbol.webp" type="Texture" id=14]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Music/Boss Music.mp3" type="AudioStream" id=16]
+[ext_resource path="res://Art/checkBox.png" type="Texture" id=17]
+[ext_resource path="res://Art/pngkit_green-tick-png_2845461.png" type="Texture" id=18]
+[ext_resource path="res://Art/sprites/characters/slime.png" type="Texture" id=19]
+[ext_resource path="res://Music/Title Screen.mp3" type="AudioStream" id=20]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Art/Warungasem-rgO1O.ttf" type="DynamicFontData" id=22]
+[ext_resource path="res://Scenes/Credits.tscn" type="PackedScene" id=23]
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 120, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 240, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 360, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 480, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 600, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 720, 0, 120, 120 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 840, 0, 120, 120 )
+
+[sub_resource type="SpriteFrames" id=40]
+animations = [ {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
+"loop": true,
+"name": "CoinSpin",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=45]
+size = 100
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=49]
+size = 60
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=50]
+size = 60
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=51]
+size = 60
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=52]
+size = 40
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=47]
+size = 100
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=48]
+size = 50
+font_data = ExtResource( 22 )
+
+[sub_resource type="ConvexPolygonShape2D" id=41]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=42]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=43]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=44]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="TileSet" id=1]
+0/name = "WALL.webp 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 352, 96, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 41 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 41 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "door.png 1"
+1/texture = ExtResource( 11 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 192, 160, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 42 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 42 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "Floor.jpg 2"
+2/texture = ExtResource( 5 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 544, 320, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "ladder.jpg 3"
+3/texture = ExtResource( 9 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 64, 288, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 43 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 43 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "Stone.jpg 4"
+4/texture = ExtResource( 8 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 160, 256, 32, 32 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 44 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 44 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 120, 120 )
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "Spin",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=55]
+size = 25
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=46]
+size = 70
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=53]
+size = 60
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=54]
+size = 60
+font_data = ExtResource( 22 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" parent="." instance=ExtResource( 21 )]
+
+[node name="CoinAnimated" type="AnimatedSprite" parent="Background"]
+position = Vector2( 32, 37 )
+scale = Vector2( 0.5125, 0.5125 )
+frames = SubResource( 40 )
+animation = "CoinSpin"
+
+[node name="CoinAnimated2" type="AnimatedSprite" parent="Background"]
+position = Vector2( 611, 37 )
+scale = Vector2( 0.5125, 0.5125 )
+frames = SubResource( 40 )
+animation = "CoinSpin"
+
+[node name="Label" type="Label" parent="Background"]
+margin_left = 62.0
+margin_right = 583.0
+margin_bottom = 79.0
+custom_fonts/font = SubResource( 45 )
+text = "Tales Of The Dungeon"
+align = 1
+
+[node name="Start" type="Button" parent="Background"]
+margin_left = 206.0
+margin_top = 69.0
+margin_right = 409.0
+margin_bottom = 129.0
+custom_fonts/font = SubResource( 49 )
+text = "Start Game"
+
+[node name="Controls" type="Button" parent="Background"]
+margin_left = 206.0
+margin_top = 152.0
+margin_right = 409.0
+margin_bottom = 212.0
+custom_fonts/font = SubResource( 50 )
+text = "Controls"
+
+[node name="Quit" type="Button" parent="Background"]
+margin_left = 206.0
+margin_top = 234.0
+margin_right = 409.0
+margin_bottom = 294.0
+custom_fonts/font = SubResource( 51 )
+text = "Quit Game"
+
+[node name="Credits" type="Button" parent="Background"]
+margin_left = 246.0
+margin_top = 310.0
+margin_right = 368.0
+margin_bottom = 348.0
+custom_fonts/font = SubResource( 52 )
+text = "Credits"
+
+[node name="ControlsInterface" type="ColorRect" parent="Background"]
+visible = false
+margin_right = 642.0
+margin_bottom = 360.0
+color = Color( 0, 0, 0, 0.501961 )
+
+[node name="Label" type="Label" parent="Background/ControlsInterface"]
+margin_left = 192.0
+margin_top = 5.0
+margin_right = 444.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 47 )
+text = "Controls"
+align = 1
+valign = 1
+
+[node name="BGColor" type="ColorRect" parent="Background/ControlsInterface"]
+margin_left = 42.0
+margin_top = 88.0
+margin_right = 99.0
+margin_bottom = 145.0
+color = Color( 0.941176, 0.67451, 0.407843, 1 )
+
+[node name="W" type="Label" parent="Background/ControlsInterface"]
+margin_left = -31.0
+margin_top = 86.0
+margin_right = 221.0
+margin_bottom = 175.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 47 )
+text = "W"
+align = 1
+valign = 1
+
+[node name="W2" type="Label" parent="Background/ControlsInterface"]
+margin_left = 108.0
+margin_top = 91.0
+margin_right = 360.0
+margin_bottom = 180.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 47 )
+text = "Move Up"
+
+[node name="BGColor2" type="ColorRect" parent="Background/ControlsInterface"]
+margin_left = 42.0
+margin_top = 151.0
+margin_right = 99.0
+margin_bottom = 208.0
+color = Color( 0.941176, 0.67451, 0.407843, 1 )
+
+[node name="A" type="Label" parent="Background/ControlsInterface"]
+margin_left = -31.0
+margin_top = 149.0
+margin_right = 221.0
+margin_bottom = 238.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 47 )
+text = "A"
+align = 1
+valign = 1
+
+[node name="A2" type="Label" parent="Background/ControlsInterface"]
+margin_left = 108.0
+margin_top = 153.0
+margin_right = 362.0
+margin_bottom = 242.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 47 )
+text = "Move Left"
+
+[node name="BGColor3" type="ColorRect" parent="Background/ControlsInterface"]
+margin_left = 42.0
+margin_top = 215.0
+margin_right = 99.0
+margin_bottom = 272.0
+color = Color( 0.941176, 0.67451, 0.407843, 1 )
+
+[node name="S" type="Label" parent="Background/ControlsInterface"]
+margin_left = -31.0
+margin_top = 213.0
+margin_right = 221.0
+margin_bottom = 302.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 47 )
+text = "S"
+align = 1
+valign = 1
+
+[node name="S2" type="Label" parent="Background/ControlsInterface"]
+margin_left = 108.0
+margin_top = 217.0
+margin_right = 362.0
+margin_bottom = 306.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 47 )
+text = "Move Down"
+
+[node name="BGColor4" type="ColorRect" parent="Background/ControlsInterface"]
+margin_left = 42.0
+margin_top = 278.0
+margin_right = 99.0
+margin_bottom = 335.0
+color = Color( 0.941176, 0.67451, 0.407843, 1 )
+
+[node name="D" type="Label" parent="Background/ControlsInterface"]
+margin_left = -31.0
+margin_top = 276.0
+margin_right = 221.0
+margin_bottom = 365.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 47 )
+text = "D"
+align = 1
+valign = 1
+
+[node name="D2" type="Label" parent="Background/ControlsInterface"]
+margin_left = 108.0
+margin_top = 278.0
+margin_right = 377.0
+margin_bottom = 367.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 47 )
+text = "Move Right"
+
+[node name="BGColor5" type="ColorRect" parent="Background/ControlsInterface"]
+margin_left = 348.0
+margin_top = 88.0
+margin_right = 405.0
+margin_bottom = 145.0
+color = Color( 0.941176, 0.67451, 0.407843, 1 )
+
+[node name="Attack" type="Label" parent="Background/ControlsInterface"]
+margin_left = 275.0
+margin_top = 86.0
+margin_right = 527.0
+margin_bottom = 175.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 47 )
+text = "E"
+align = 1
+valign = 1
+
+[node name="Attack2" type="Label" parent="Background/ControlsInterface"]
+margin_left = 414.0
+margin_top = 91.0
+margin_right = 666.0
+margin_bottom = 180.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 47 )
+text = "Attack"
+
+[node name="BackButton" type="Button" parent="Background/ControlsInterface"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 55.0
+custom_fonts/font = SubResource( 48 )
+text = "Back"
+
+[node name="Credits" parent="." instance=ExtResource( 23 )]
+visible = false
+
+[node name="BackButton2" type="Button" parent="Credits"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 75.0
+margin_bottom = 55.0
+custom_fonts/font = SubResource( 48 )
+text = "Back"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="Player" parent="." instance=ExtResource( 15 )]
+scale = Vector2( 1, 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 640.0
+margin_bottom = 40.0
+color = Color( 0.101961, 0.101961, 0.101961, 0.752941 )
+
+[node name="Playerhead" type="Sprite" parent="CanvasLayer/ColorRect"]
+position = Vector2( 20, 19 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/ColorRect"]
+modulate = Color( 0, 1, 0.133333, 1 )
+margin_left = 42.0
+margin_right = 235.0
+margin_bottom = 40.0
+value = 100.0
+
+[node name="Coin2" type="AnimatedSprite" parent="CanvasLayer/ColorRect"]
+position = Vector2( 254.88, 21.875 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 25 )
+animation = "Spin"
+
+[node name="Coin" type="Label" parent="CanvasLayer/ColorRect"]
+margin_left = 272.0
+margin_top = 5.0
+margin_right = 367.0
+margin_bottom = 45.0
+text = "0"
+valign = 1
+
+[node name="Slime" type="Sprite" parent="CanvasLayer/ColorRect"]
+position = Vector2( 316.953, 19.5 )
+scale = Vector2( 1.65625, 1.65625 )
+texture = ExtResource( 19 )
+hframes = 6
+vframes = 5
+
+[node name="EnemyCounter" type="Label" parent="CanvasLayer/ColorRect"]
+margin_left = 329.0
+margin_top = 5.0
+margin_right = 424.0
+margin_bottom = 45.0
+text = "0"
+valign = 1
+
+[node name="BossHead" type="Sprite" parent="CanvasLayer/ColorRect"]
+visible = false
+position = Vector2( 365, 21.2308 )
+scale = Vector2( 0.999999, 1 )
+texture = ExtResource( 3 )
+
+[node name="BossHealthBar" type="ProgressBar" parent="CanvasLayer/ColorRect"]
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 388.0
+margin_right = 581.0
+margin_bottom = 40.0
+max_value = 1000.0
+value = 1000.0
+
+[node name="Floor" type="Label" parent="CanvasLayer/ColorRect"]
+margin_left = 598.0
+margin_top = 5.0
+margin_right = 693.0
+margin_bottom = 45.0
+text = "0F"
+valign = 1
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+margin_top = 40.0
+margin_right = 128.0
+margin_bottom = 80.0
+color = Color( 0.101961, 0.101961, 0.101961, 0.752941 )
+
+[node name="EnergySymbol" type="Sprite" parent="CanvasLayer/ColorRect2"]
+position = Vector2( 18, 18 )
+scale = Vector2( 0.0119122, 0.0123417 )
+texture = ExtResource( 4 )
+
+[node name="Speed" type="Sprite" parent="CanvasLayer/ColorRect2"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 45, 18 )
+scale = Vector2( 0.0729166, 0.0729166 )
+texture = ExtResource( 6 )
+
+[node name="Speed2" type="Sprite" parent="CanvasLayer/ColorRect2"]
+visible = false
+position = Vector2( 45, 18 )
+scale = Vector2( 0.0729166, 0.0729166 )
+texture = ExtResource( 6 )
+
+[node name="Heal" type="Sprite" parent="CanvasLayer/ColorRect2"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 77.5977, 18.5977 )
+scale = Vector2( 0.0526663, 0.0526663 )
+texture = ExtResource( 10 )
+
+[node name="Heal2" type="Sprite" parent="CanvasLayer/ColorRect2"]
+visible = false
+position = Vector2( 77.5977, 19.5977 )
+scale = Vector2( 0.0619042, 0.0619042 )
+texture = ExtResource( 10 )
+
+[node name="Strength" type="Sprite" parent="CanvasLayer/ColorRect2"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 109.43, 19.098 )
+scale = Vector2( 0.150833, 0.150833 )
+texture = ExtResource( 14 )
+
+[node name="Strength2" type="Sprite" parent="CanvasLayer/ColorRect2"]
+visible = false
+position = Vector2( 109.43, 19.098 )
+scale = Vector2( 0.150833, 0.150833 )
+texture = ExtResource( 14 )
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer"]
+margin_left = 512.0
+margin_top = 40.0
+margin_right = 640.0
+margin_bottom = 161.0
+color = Color( 0.101961, 0.101961, 0.101961, 0.752941 )
+
+[node name="DungeonObjectives" type="Label" parent="CanvasLayer/ColorRect3"]
+margin_left = -13.0
+margin_top = -18.0
+margin_right = 142.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 55 )
+text = "Dungeon Objectives:"
+align = 1
+valign = 1
+
+[node name="Coin3" type="AnimatedSprite" parent="CanvasLayer/ColorRect3"]
+position = Vector2( 46.5, 38.5 )
+scale = Vector2( 0.208333, 0.208333 )
+frames = SubResource( 25 )
+animation = "Spin"
+
+[node name="CoinText" type="Label" parent="CanvasLayer/ColorRect3"]
+margin_top = 14.0
+margin_right = 139.0
+margin_bottom = 70.0
+text = "250"
+align = 1
+valign = 1
+
+[node name="Slime2" type="Sprite" parent="CanvasLayer/ColorRect3"]
+position = Vector2( 50, 67 )
+scale = Vector2( 1.208, 1.208 )
+texture = ExtResource( 19 )
+hframes = 6
+vframes = 5
+
+[node name="EnemyText" type="Label" parent="CanvasLayer/ColorRect3"]
+margin_top = 43.0
+margin_right = 139.0
+margin_bottom = 99.0
+text = "25"
+align = 1
+valign = 1
+
+[node name="BossHead2" type="Sprite" parent="CanvasLayer/ColorRect3"]
+position = Vector2( 46, 99 )
+scale = Vector2( 0.999999, 1 )
+texture = ExtResource( 3 )
+
+[node name="BossText" type="Label" parent="CanvasLayer/ColorRect3"]
+margin_left = -3.0
+margin_top = 77.0
+margin_right = 136.0
+margin_bottom = 133.0
+text = "1"
+align = 1
+valign = 1
+
+[node name="Box" type="Sprite" parent="CanvasLayer/ColorRect3"]
+position = Vector2( 18.5, 37.5 )
+scale = Vector2( 0.0527342, 0.0527342 )
+texture = ExtResource( 17 )
+
+[node name="Box2" type="Sprite" parent="CanvasLayer/ColorRect3"]
+position = Vector2( 18.5, 67.5 )
+scale = Vector2( 0.0527342, 0.0527342 )
+texture = ExtResource( 17 )
+
+[node name="Box3" type="Sprite" parent="CanvasLayer/ColorRect3"]
+position = Vector2( 18.5, 98.5 )
+scale = Vector2( 0.0527342, 0.0527342 )
+texture = ExtResource( 17 )
+
+[node name="Tick" type="Sprite" parent="CanvasLayer/ColorRect3"]
+visible = false
+position = Vector2( 24.436, 33.9 )
+scale = Vector2( 0.0401734, 0.0401734 )
+texture = ExtResource( 18 )
+
+[node name="Tick2" type="Sprite" parent="CanvasLayer/ColorRect3"]
+visible = false
+position = Vector2( 24.436, 63.9 )
+scale = Vector2( 0.0401734, 0.0401734 )
+texture = ExtResource( 18 )
+
+[node name="Tick3" type="Sprite" parent="CanvasLayer/ColorRect3"]
+visible = false
+position = Vector2( 24.436, 94.9 )
+scale = Vector2( 0.0401734, 0.0401734 )
+texture = ExtResource( 18 )
+
+[node name="WinGame" type="ColorRect" parent="CanvasLayer"]
+visible = false
+margin_right = 640.0
+margin_bottom = 359.0
+rect_pivot_offset = Vector2( -112, 68 )
+color = Color( 0, 0, 0, 0.729412 )
+
+[node name="CoinAnimated" type="AnimatedSprite" parent="CanvasLayer/WinGame"]
+position = Vector2( 211, 33 )
+scale = Vector2( 0.341666, 0.341666 )
+frames = SubResource( 40 )
+animation = "CoinSpin"
+
+[node name="CoinAnimated2" type="AnimatedSprite" parent="CanvasLayer/WinGame"]
+position = Vector2( 430, 33 )
+scale = Vector2( 0.341666, 0.341666 )
+frames = SubResource( 40 )
+animation = "CoinSpin"
+
+[node name="Label" type="Label" parent="CanvasLayer/WinGame"]
+margin_left = 221.0
+margin_top = 7.0
+margin_right = 419.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 46 )
+text = "You Win!"
+align = 1
+
+[node name="Restart" type="Button" parent="CanvasLayer/WinGame"]
+margin_left = 225.0
+margin_top = 263.0
+margin_right = 417.0
+margin_bottom = 323.0
+custom_fonts/font = SubResource( 52 )
+text = "Restart"
+
+[node name="Playerhead" type="Sprite" parent="CanvasLayer/WinGame"]
+position = Vector2( 195, 104 )
+scale = Vector2( 3.92308, 3.92308 )
+texture = ExtResource( 12 )
+
+[node name="Stats" type="Label" parent="CanvasLayer/WinGame"]
+margin_left = 164.0
+margin_top = 58.0
+margin_right = 471.0
+margin_bottom = 121.0
+text = "Here Is A Summary Of Your Statistics Below:"
+align = 1
+
+[node name="Coin2" type="AnimatedSprite" parent="CanvasLayer/WinGame"]
+position = Vector2( 195, 154 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 25 )
+animation = "Spin"
+
+[node name="CoinText" type="Label" parent="CanvasLayer/WinGame"]
+margin_left = 214.0
+margin_top = 154.0
+margin_right = 521.0
+margin_bottom = 217.0
+text = "Coins Collected: 0"
+
+[node name="Slime" type="Sprite" parent="CanvasLayer/WinGame"]
+position = Vector2( 199, 187 )
+scale = Vector2( 1.65625, 1.65625 )
+texture = ExtResource( 19 )
+hframes = 6
+vframes = 5
+
+[node name="EnemyText" type="Label" parent="CanvasLayer/WinGame"]
+margin_left = 214.0
+margin_top = 187.0
+margin_right = 521.0
+margin_bottom = 250.0
+text = "Enemies Defeated: 0"
+
+[node name="BossHead2" type="Sprite" parent="CanvasLayer/WinGame"]
+position = Vector2( 195, 223 )
+scale = Vector2( 0.999999, 1 )
+texture = ExtResource( 3 )
+
+[node name="BossText" type="Label" parent="CanvasLayer/WinGame"]
+margin_left = 214.0
+margin_top = 222.0
+margin_right = 521.0
+margin_bottom = 285.0
+text = "Bosses Defeated: 0"
+
+[node name="BossDefeat" type="ColorRect" parent="CanvasLayer"]
+visible = false
+margin_right = 640.0
+margin_bottom = 359.0
+rect_pivot_offset = Vector2( -112, 68 )
+color = Color( 0, 0, 0, 0.729412 )
+
+[node name="Label" type="Label" parent="CanvasLayer/BossDefeat"]
+margin_left = -2.0
+margin_top = 9.0
+margin_right = 644.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 46 )
+text = "Are You Sure You Won The Game?"
+align = 1
+
+[node name="Restart" type="Button" parent="CanvasLayer/BossDefeat"]
+margin_left = 225.0
+margin_top = 281.0
+margin_right = 417.0
+margin_bottom = 341.0
+custom_fonts/font = SubResource( 53 )
+text = "Restart"
+
+[node name="Playerhead" type="Sprite" parent="CanvasLayer/BossDefeat"]
+position = Vector2( 195, 108 )
+scale = Vector2( 3.92308, 3.92308 )
+texture = ExtResource( 12 )
+
+[node name="Stats" type="Label" parent="CanvasLayer/BossDefeat"]
+margin_left = 164.0
+margin_top = 62.0
+margin_right = 471.0
+margin_bottom = 125.0
+text = "Here Is A Summary Of Your Statistics Below:"
+align = 1
+
+[node name="Coin2" type="AnimatedSprite" parent="CanvasLayer/BossDefeat"]
+position = Vector2( 195, 158 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 25 )
+animation = "Spin"
+
+[node name="CoinText" type="Label" parent="CanvasLayer/BossDefeat"]
+margin_left = 214.0
+margin_top = 158.0
+margin_right = 521.0
+margin_bottom = 221.0
+text = "Coins Collected: 0"
+
+[node name="Slime" type="Sprite" parent="CanvasLayer/BossDefeat"]
+position = Vector2( 199, 191 )
+scale = Vector2( 1.65625, 1.65625 )
+texture = ExtResource( 19 )
+hframes = 6
+vframes = 5
+
+[node name="EnemyText" type="Label" parent="CanvasLayer/BossDefeat"]
+margin_left = 214.0
+margin_top = 191.0
+margin_right = 521.0
+margin_bottom = 254.0
+text = "Enemies Defeated: 0"
+
+[node name="BossHead2" type="Sprite" parent="CanvasLayer/BossDefeat"]
+position = Vector2( 195, 227 )
+scale = Vector2( 0.999999, 1 )
+texture = ExtResource( 3 )
+
+[node name="BossText" type="Label" parent="CanvasLayer/BossDefeat"]
+margin_left = 214.0
+margin_top = 226.0
+margin_right = 521.0
+margin_bottom = 289.0
+text = "Bosses Defeated: 0"
+
+[node name="Label2" type="Label" parent="CanvasLayer/BossDefeat"]
+margin_left = 167.0
+margin_top = 259.0
+margin_right = 474.0
+margin_bottom = 322.0
+text = "Try And Complete All The Objectives..."
+align = 1
+
+[node name="Lose" type="ColorRect" parent="CanvasLayer"]
+visible = false
+margin_right = 640.0
+margin_bottom = 359.0
+rect_pivot_offset = Vector2( -112, 68 )
+color = Color( 0, 0, 0, 0.729412 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Lose"]
+margin_left = 214.0
+margin_top = 7.0
+margin_right = 412.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 46 )
+text = "You Lose!"
+align = 1
+
+[node name="Restart" type="Button" parent="CanvasLayer/Lose"]
+margin_left = 225.0
+margin_top = 263.0
+margin_right = 417.0
+margin_bottom = 323.0
+custom_fonts/font = SubResource( 54 )
+text = "Restart"
+
+[node name="Playerhead" type="Sprite" parent="CanvasLayer/Lose"]
+position = Vector2( 195, 104 )
+scale = Vector2( 3.92308, 3.92308 )
+texture = ExtResource( 12 )
+
+[node name="Stats" type="Label" parent="CanvasLayer/Lose"]
+margin_left = 164.0
+margin_top = 58.0
+margin_right = 471.0
+margin_bottom = 121.0
+text = "Here Is A Summary Of Your Statistics Below:"
+align = 1
+
+[node name="Coin2" type="AnimatedSprite" parent="CanvasLayer/Lose"]
+position = Vector2( 195, 154 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 25 )
+animation = "Spin"
+
+[node name="CoinText" type="Label" parent="CanvasLayer/Lose"]
+margin_left = 214.0
+margin_top = 154.0
+margin_right = 521.0
+margin_bottom = 217.0
+text = "Coins Collected: 0"
+
+[node name="Slime" type="Sprite" parent="CanvasLayer/Lose"]
+position = Vector2( 199, 187 )
+scale = Vector2( 1.65625, 1.65625 )
+texture = ExtResource( 19 )
+hframes = 6
+vframes = 5
+
+[node name="EnemyText" type="Label" parent="CanvasLayer/Lose"]
+margin_left = 214.0
+margin_top = 187.0
+margin_right = 521.0
+margin_bottom = 250.0
+text = "Enemies Defeated: 0"
+
+[node name="BossHead2" type="Sprite" parent="CanvasLayer/Lose"]
+position = Vector2( 195, 223 )
+scale = Vector2( 0.999999, 1 )
+texture = ExtResource( 3 )
+
+[node name="BossText" type="Label" parent="CanvasLayer/Lose"]
+margin_left = 214.0
+margin_top = 222.0
+margin_right = 521.0
+margin_bottom = 285.0
+text = "Bosses Defeated: 0"
+
+[node name="RegenerationTimer" type="Timer" parent="CanvasLayer"]
+wait_time = 12.0
+autostart = true
+
+[node name="RegenTimer" type="Timer" parent="CanvasLayer"]
+wait_time = 0.4
+
+[node name="RegenStopTimer" type="Timer" parent="CanvasLayer"]
+wait_time = 10.0
+
+[node name="StrengthTimer" type="Timer" parent="CanvasLayer"]
+wait_time = 7.0
+
+[node name="TitleMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 20 )
+volume_db = -5.0
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 13 )
+volume_db = -5.0
+
+[node name="BossMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 16 )
+volume_db = -5.0
+
+[connection signal="pressed" from="Background/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Background/Controls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="Background/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="Background/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Background/ControlsInterface/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Credits/BackButton2" to="." method="_on_BackButton2_pressed"]
+[connection signal="pressed" from="CanvasLayer/WinGame/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/BossDefeat/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/Lose/Restart" to="." method="_on_Restart_pressed"]
+[connection signal="timeout" from="CanvasLayer/RegenerationTimer" to="." method="_on_RegenerationTimer_timeout"]
+[connection signal="timeout" from="CanvasLayer/RegenTimer" to="." method="_on_RegenTimer_timeout"]
+[connection signal="timeout" from="CanvasLayer/RegenStopTimer" to="." method="_on_RegenStopTimer_timeout"]
+[connection signal="timeout" from="CanvasLayer/StrengthTimer" to="." method="_on_StrengthTimer_timeout"]
