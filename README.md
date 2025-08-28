@@ -10,6 +10,7 @@ A 2D dungeon crawler where the player explores levels, defeats enemies, and coll
 - Challenging boss battle as the ultimate goal (Only 3 people have ever defeated the boss!).
 
 ## Watch the video!
+Watch the video - https://www.youtube.com/watch?v=HXmxu-tvXWY
 
 ## How to install the game
 1. Make sure you have **Godot version 3.x** installed (any Godot 3 version).
